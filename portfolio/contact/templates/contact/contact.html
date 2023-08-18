@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% block body %}
+    <!--================ Start Banner Area =================-->
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="container">
+                <div class="banner_content text-center">
+                    <h2>Contact Us</h2>
+                    <div class="page_link">
+                        <a href="index.html">Home</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================ End Banner Area =================-->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <!--================Contact Area =================-->
+    <section class="contact_area section_gap">
+        <div class="container">
+            {% if messages %}
+                <div class="alert alert-success col-lg-8 mx-auto" role="alert">
+                {% for message in messages %}
+                    <h4 class="text-center">{{ message }}</h4>
+                {% endfor %}
+                </div> 
+            {% endif %}
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="contact_info">
+                        <div class="info_item">
+                            <i class="lnr lnr-home"></i>
+                            <h6>Damitta, Egypt</h6>
+                            <p>New Damitta City</p>
+                        </div>
+                        <div class="info_item">
+                            <i class="lnr lnr-phone-handset"></i>
+                            <h6>(+20)-1288585146</h6>
+                            <p>24/7</p>
+                        </div>
+                        <div class="info_item">
+                            <i class="lnr lnr-envelope"></i>
+                            <h6><a href="#">Mohammed@coder-hassaan.com</a></h6>
+                            <p>Send us your query anytime!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form|bootstrap }}
+                        <input type="submit" value="Send Message" class="primary_btn">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================Contact Area =================-->
+{% endblock %}
+    

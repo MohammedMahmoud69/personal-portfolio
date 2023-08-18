@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <!--================ Start Banner Area =================-->
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="container">
+                <div class="banner_content text-center">
+                    <h2>Services</h2>
+                    <div class="page_link">
+                        <a href="index.html">Home</a>
+                        <a href="services.html">Services</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================ End Banner Area =================-->
+    <br>
+    <br>
+    <br>
+	<!--================ Start Features Area =================-->
+	<section class="features_area">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8 text-center">
+					<div class="main_title">
+						<h2>service offers </h2>
+						<p>
+							“You should name a variable using <br>
+							the same care with which you name a first-born child.”
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="row feature_inner">
+                {% for service in services %}
+				    <div class="col-lg-3 col-md-6 mx-auto">
+					    <div class="feature_item">
+					    	<img src="{{ service.icon.url }}" alt="">
+					    	<h4>{{ service.name }}</h4>
+					    	<p>{{ service.description }}</p>
+					    </div>
+				    </div>
+                {% endfor %}
+			</div>
+		</div>
+	</section>
+	<!--================ End Features Area =================-->
+{% endblock %}

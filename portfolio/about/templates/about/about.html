@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+    <!--================ Start Banner Area =================-->
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="container">
+                <div class="banner_content text-center">
+                    <h2>About Us</h2>
+                    <div class="page_link">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================ End Banner Area =================-->
+    
+   <!--================ Start About Us Area =================-->
+	<section class="about_area section_gap">
+        <div class="container">
+            <div class="row justify-content-start align-items-center">
+                <div class="col-lg-5">
+                    <div class="about_img">
+                        <img class="" src="{% static 'img/about-us.png' %}" alt="">
+                    </div>
+                </div>
+                <div class="offset-lg-1 col-lg-5">
+                    <div class="main_title text-left">
+                        <h2>let’s <br>
+                            Introduce about <br>
+                            myself</h2>
+                    {% for about in abouts %}
+                        <p>
+                            {{ about.subject }}
+                        </p>
+                    {% endfor %}
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!--================ End About Us Area =================-->
+    
+{% endblock %}
